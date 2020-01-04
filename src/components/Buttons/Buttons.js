@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { connect } from "react-redux";
 import "./buttons.scss";
+import Button from "../Button"
 
 const mapStateToProps = state => {
   return {
@@ -29,9 +30,9 @@ function Buttons({ left = false, right = false, random, handleRandom }) {
   return (
     <div className={`buttons-container ${left && `left`} ${right && `right`}`}>
       <div className="buttons">
-        <button onClick={() => handleChoice("Rock")}>Rock</button>
-        <button onClick={() => handleChoice("Paper")}>Paper</button>
-        <button onClick={() => handleChoice("Scissors")}>scissors</button>
+          <Button title="Rock" handleChoice={handleChoice}/>
+          <Button title="Paper" handleChoice={handleChoice}/>
+          <Button title="Scissors" handleChoice={handleChoice}/>
       </div>
       <div className="big-choice">
         <button>{left ? choice : random}</button>

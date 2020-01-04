@@ -17,32 +17,31 @@ const randomMiddleware = store => next => action => {
   } else {
     switch (user) {
       case "Rock":
-        {
-          if (pc.random === "Paper") {
-            next({ type: "LOSE" });
-          } else if (pc.random === "Scissors") {
-            next({ type: "WIN" });
-          }
+        if (pc.random === "Paper") {
+          next({ type: "LOSE" });
+        } else if (pc.random === "Scissors") {
+          next({ type: "WIN" });
         }
+
         break;
       case "Paper":
-        {
-          if (pc.random === "Scissors") {
-            next({ type: "LOSE" });
-          } else if (pc.random === "Rock") {
-            next({ type: "WIN" });
-          }
+        if (pc.random === "Scissors") {
+          next({ type: "LOSE" });
+        } else if (pc.random === "Rock") {
+          next({ type: "WIN" });
         }
+
         break;
       case "Scissors":
-        {
-          if (pc.random === "Rock") {
-            next({ type: "LOSE" });
-          } else if (pc.random === "Paper") {
-            next({ type: "WIN" });
-          }
+        if (pc.random === "Rock") {
+          next({ type: "LOSE" });
+        } else if (pc.random === "Paper") {
+          next({ type: "WIN" });
         }
+
         break;
+      default:
+        alert("ERROR");
     }
   }
 
