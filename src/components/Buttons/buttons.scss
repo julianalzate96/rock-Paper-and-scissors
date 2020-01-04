@@ -1,0 +1,19 @@
+.buttons-container{
+    border: 1px solid red;
+    display: flex;
+    width: 40%;
+    justify-content: space-around;
+
+    .buttons{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+.left{
+    flex-direction: row;
+}
+
+.right{
+    flex-direction: row-reverse;
+}

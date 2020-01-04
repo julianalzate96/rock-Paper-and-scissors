@@ -1,9 +1,19 @@
-import React from 'react'
+import React from "react";
+import { connect } from "react-redux";
+import "./big-title.scss"
 
-export default function BigTitle() {
-    return (
-        <div>
-            <h1>Title</h1>
-        </div>
-    )
+const mapStateToProps = state => {
+  return {
+    title: state.title
+  };
+};
+
+function BigTitle({ title }) {
+  return (
+    <div className="big-title-container">
+      <h1>{title}</h1>
+    </div>
+  );
 }
+
+export default connect(mapStateToProps)(BigTitle);
